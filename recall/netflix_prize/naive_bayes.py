@@ -61,8 +61,8 @@ for uid in user:  # 所有用户id列表
     for vid in video:  # 所有视频id列表，需要计算每个用户对每个视频的评分
         uid_p_set = play_action[uid]  # {565: set([(3894, 3)]), 20: set([(3860, 4), (2095, 5)])}
         uid_action_vid = set([x[0] for x in list(uid_p_set)])
+        P_uid_vid = 0.0
         if vid not in uid_action_vid:
-            P_uid_vid = 0.0
             for s in [1, 2, 3, 4, 5]:  # Netflix prize数据集一共有5个评分等级，分别是1，2，3，4，5。
                 temp = len([x[0] for x in list(video_map[vid]) if x[1] == s])
                 if temp != 0:
