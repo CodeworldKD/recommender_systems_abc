@@ -110,7 +110,7 @@ for uid in user:
     idx = uid2idx_map[uid]
     rec = model.recommend(idx, user_plays, N=rec_num, filter_already_liked_items=True)
     # rec = [(242096, 0.6532608), (134087, 0.604611), (41269, 0.57267845)]
-    u_rec = [(idx2uid_map[x[0]], x[1]) for x in rec]
+    u_rec = [(idx2vid_map[x[0]], x[1]) for x in rec]
     mf_rec_map[uid] = u_rec
 
 print(mf_rec_map)
